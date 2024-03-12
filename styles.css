@@ -124,3 +124,41 @@ h6 {
   border-radius: 0.3em;
   font-weight: bold;
 }
+
+.todo-list {
+  max-width: 30rem;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.todo {
+  display: flex;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.3em;
+  align-items: center;
+  padding-left: 0.5rem;
+  overflow: hidden;
+}
+
+.todo__item {
+  flex-grow: 1;
+}
+
+.btn--remove {
+  background-color: transparent;
+  color: crimson;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0 1rem;
+  border-radius: 0.2em;
+  transition: all 0.2s;
+}
+
+.btn--remove:hover {
+  background-color: rgba(179, 11, 45, 0.849);
+  color: wheat;
+}
