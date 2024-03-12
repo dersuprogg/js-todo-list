@@ -39,3 +39,13 @@ addTodoBtn.addEventListener("click", (e) => {
   }
   e.preventDefault();
 });
+
+todoList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn--remove")) {
+    const targetTodo = e.target.parentElement;
+    targetTodo.classList.add("drop");
+    setTimeout(() => {
+      targetTodo.remove();
+    }, 400);
+  }
+});

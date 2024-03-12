@@ -202,3 +202,19 @@ h6 {
   cursor: pointer;
   color: var(--dark-text-color);
 }
+
+/* Remove animation */
+@keyframes drop {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform-origin: left;
+    transform: translateY(4px) rotate(5deg);
+    opacity: 0;
+  }
+}
+
+.drop {
+  animation: drop 0.5s 1;
+}
