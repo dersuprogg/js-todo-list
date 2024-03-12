@@ -123,6 +123,11 @@ h6 {
   padding: 0 1rem;
   border-radius: 0.3em;
   font-weight: bold;
+  transition: all 0.2s;
+}
+
+.btn--submit:hover {
+  background-color: #1e8b32;
 }
 
 .todo-list {
@@ -142,6 +147,10 @@ h6 {
   align-items: center;
   padding-left: 0.5rem;
   overflow: hidden;
+  transition: all 0.2s;
+}
+.todo:hover {
+  background-color: var(--light-gray-color);
 }
 
 .todo__item {
