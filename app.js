@@ -30,6 +30,24 @@ function addTodoToDOM(todo) {
   todoList.append(li);
 
   formInput.value = "";
+
+  addItemToLocalStorage(todo);
+}
+
+// Local Storage Functions
+function getLocalStorage() {
+  let todos;
+  if (!localStorage.getItem("todos")) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem("todos"));
+  }
+  return todos;
+}
+function addItemToLocalStorage(todo) {
+  const todos = getLocalStorage();
+  todos.push(todo.toLowerCase());
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 // Add event listeners
