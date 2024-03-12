@@ -218,3 +218,28 @@ h6 {
 .drop {
   animation: drop 0.5s 1;
 }
+
+.filter-input {
+  width: 90%;
+  max-width: 30rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 6rem;
+  font-size: 1.4rem;
+  background-color: transparent;
+  /* border: 1px solid var(--outline-blue); */
+  border: none;
+  border-bottom: 1px solid var(--outline-blue);
+  border-top: 1px solid transparent;
+  color: #fff;
+  background-color: transparent;
+  padding: 2px 5px;
+  transition: all 0.1s;
+  /* border-radius: 0.3em; */
+}
+
+.filter-input:focus {
+  outline: none;
+  background-color: #1f71eb21;
+  border-top: 1px solid var(--outline-blue);
+}
