@@ -48,6 +48,13 @@ function addItemToLocalStorage(todo) {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
+function removeItemFromLocalStorage(todoToRemove) {
+  const todos = getLocalStorage();
+  const index = todos.findIndex((todo) => todo == todoToRemove);
+  todos.splice(index, 1);
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
 // Add event listeners
 addTodoBtn.addEventListener("click", (e) => {
   if (formInput.value.trim() !== "") {
@@ -64,11 +71,12 @@ todoList.addEventListener("click", (e) => {
     setTimeout(() => {
       targetTodo.remove();
     }, 400);
+    removeItemFromLocalStorage(e.target.previousElementSibling.textContent);
   }
 });
 
 filterInput.addEventListener("input", (e) => {
-  const currentItem = e.target.value.toLowerCase();
+  const currentItem = e.target.value.toLowerCase().trim();
   const todos = Array.from(todoList.children);
   for (const todo of todos) {
     if (
