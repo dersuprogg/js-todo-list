@@ -162,3 +162,34 @@ h6 {
   background-color: rgba(179, 11, 45, 0.849);
   color: wheat;
 }
+
+.footer {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  padding: 1rem 2rem;
+  border: 1px solid var(--border-color);
+  width: 90%;
+  max-width: 100rem;
+  transform: translateX(-50%);
+  border-radius: 1em;
+  font-weight: normal;
+  transition: all 0.3s;
+}
+.footer__heading {
+  font-weight: normal;
+}
+
+.hidden {
+  display: none;
+}
+
+.click-here {
+  text-decoration: underline;
+  transition: all 0.2s;
+}
+
+.click-here:hover {
+  cursor: pointer;
+  color: var(--dark-text-color);
+}
