@@ -1,0 +1,39 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html{
+  font-size: 62.5%;
+}
+:root {
+  --dark-gray-color: #0d1117;
+  --medium-gray-color: #161b22;
+  --light-gray-color: #1f242c;
+  --dark-text-color: #848d97;
+  --light-text-color: #e6edf3;
+  --border-color: #30363d;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "DM Sans", sans-serif;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
