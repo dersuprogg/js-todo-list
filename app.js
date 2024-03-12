@@ -48,6 +48,15 @@ function addItemToLocalStorage(todo) {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
+function removeItemFromLocalStorage(todoToRemove) {
+  const todos = getLocalStorage();
+  const index = todos.findIndex((todo) => todo == todoToRemove);
+  todos.splice(index, 1);
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+removeItemFromLocalStorage("buy milk");
+
 // Add event listeners
 addTodoBtn.addEventListener("click", (e) => {
   if (formInput.value.trim() !== "") {
@@ -64,6 +73,7 @@ todoList.addEventListener("click", (e) => {
     setTimeout(() => {
       targetTodo.remove();
     }, 400);
+    removeItemFromLocalStorage(e.target.previousElementSibling.textContent);
   }
 });
 
