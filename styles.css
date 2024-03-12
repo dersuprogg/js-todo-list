@@ -20,6 +20,8 @@ html {
   --dark-text-color: #848d97;
   --light-text-color: #e6edf3;
   --border-color: #30363d;
+  --outline-blue: #1f6feb;
+  --color-green: #2ea043;
 }
 body {
   line-height: 1.5;
@@ -75,4 +77,50 @@ h6 {
 .logo {
   height: 4rem;
   border-radius: 50%;
+}
+
+.form {
+  display: flex;
+  width: 90%;
+  max-width: 50rem;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--light-gray-color);
+  padding: 2rem;
+  border-radius: 0.3em;
+  margin-bottom: 2rem;
+}
+
+.form input {
+  flex-grow: 1;
+  font-size: 1.6rem;
+  border-radius: 0.3em;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--light-text-color);
+  padding: 2px 5px;
+}
+
+.form input:focus {
+  outline: 2px solid var(--outline-blue);
+  border-color: transparent;
+}
+
+.btn {
+  border: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn--submit {
+  background-color: var(--color-green);
+  color: var(--light-text-color);
+  padding: 0 1rem;
+  border-radius: 0.3em;
+  font-weight: bold;
 }
