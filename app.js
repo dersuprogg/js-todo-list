@@ -3,7 +3,7 @@
 const addTodoBtn = document.querySelector(".btn--submit");
 const formInput = document.querySelector(".form input");
 const todoList = document.querySelector(".todo-list");
-
+const filterInput = document.querySelector(".filter-input");
 // Helper functions
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -47,5 +47,19 @@ todoList.addEventListener("click", (e) => {
     setTimeout(() => {
       targetTodo.remove();
     }, 400);
+  }
+});
+
+filterInput.addEventListener("input", (e) => {
+  const currentItem = e.target.value.toLowerCase();
+  const todos = Array.from(todoList.children);
+  for (const todo of todos) {
+    if (
+      !todo.firstElementChild.textContent.toLowerCase().includes(currentItem)
+    ) {
+      todo.classList.add("hidden");
+    } else {
+      todo.classList.remove("hidden");
+    }
   }
 });
