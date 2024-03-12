@@ -30,8 +30,6 @@ function addTodoToDOM(todo) {
   todoList.append(li);
 
   formInput.value = "";
-
-  addItemToLocalStorage(todo);
 }
 
 // Local Storage Functions
@@ -53,6 +51,7 @@ function addItemToLocalStorage(todo) {
 // Add event listeners
 addTodoBtn.addEventListener("click", (e) => {
   if (formInput.value.trim() !== "") {
+    addItemToLocalStorage(formInput.value.toLowerCase());
     addTodoToDOM(formInput.value);
   }
   e.preventDefault();
@@ -79,5 +78,14 @@ filterInput.addEventListener("input", (e) => {
     } else {
       todo.classList.remove("hidden");
     }
+  }
+});
+
+// Show todos from local storage when page loaded
+document.addEventListener("DOMContentLoaded", (e) => {
+  todoList.innerHTML = "";
+  const todos = getLocalStorage();
+  for (const todo of todos) {
+    addTodoToDOM(todo);
   }
 });
