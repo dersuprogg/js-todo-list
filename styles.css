@@ -243,3 +243,14 @@ h6 {
 .hidden {
   display: none;
 }
+
+.footer__heading a:link,
+.footer__heading a:visited {
+  color: var(--light-text-color);
+  transition: all 0.2s;
+}
+
+.footer__heading a:active,
+.footer__heading a:hover {
+  color: var(--dark-text-color);
+}
