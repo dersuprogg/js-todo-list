@@ -189,10 +189,6 @@ h6 {
   font-weight: normal;
 }
 
-.hidden {
-  display: none;
-}
-
 .click-here {
   text-decoration: underline;
   transition: all 0.2s;
@@ -242,4 +238,8 @@ h6 {
   outline: none;
   background-color: #1f71eb21;
   border-top: 1px solid var(--outline-blue);
+}
+
+.hidden {
+  display: none;
 }

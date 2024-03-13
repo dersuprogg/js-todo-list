@@ -9,6 +9,16 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+function checkUI() {
+  if (todoList.children.length) {
+    filterInput.classList.remove("hidden");
+    console.log("remove");
+  } else {
+    console.log("ADD");
+    filterInput.classList.add("hidden");
+  }
+}
+
 // Main functions of the app
 function addTodoToDOM(todo) {
   // Create todo elements
@@ -96,4 +106,5 @@ document.addEventListener("DOMContentLoaded", (e) => {
   for (const todo of todos) {
     addTodoToDOM(todo);
   }
+  checkUI();
 });
