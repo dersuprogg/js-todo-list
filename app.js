@@ -12,9 +12,7 @@ function capitalize(str) {
 function checkUI() {
   if (todoList.children.length) {
     filterInput.classList.remove("hidden");
-    console.log("remove");
   } else {
-    console.log("ADD");
     filterInput.classList.add("hidden");
   }
 }
@@ -71,6 +69,7 @@ addTodoBtn.addEventListener("click", (e) => {
     addItemToLocalStorage(formInput.value.toLowerCase());
     addTodoToDOM(formInput.value);
   }
+  checkUI();
   e.preventDefault();
 });
 
@@ -80,6 +79,7 @@ todoList.addEventListener("click", (e) => {
     targetTodo.classList.add("drop");
     setTimeout(() => {
       targetTodo.remove();
+      checkUI();
     }, 400);
     removeItemFromLocalStorage(e.target.previousElementSibling.textContent);
   }
